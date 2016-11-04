@@ -1,0 +1,25 @@
+function [route1] = or_opt_one(route1)
+
+    r_len = length(route1);
+    if(r_len > 3)                
+        win_size = randi([2, r_len - 3]);
+        
+        displacement = 0;
+        if((r_len - 3) > win_size)
+            displacement = randi([0,(r_len -2) - win_size]);
+        end
+        fprintf('displacement %d winsize %d\n', displacement, win_size);
+        %chaca chaca
+        start = 2 + displacement;
+        last = displacement + win_size;
+    
+        fprintf('start %d end %d\n', start, last);
+        
+        route_small = [route1(1:start-1) route1(last:r_len)]
+        ran_num = route_small(randi([1, length(route_small)]))
+        
+        route1 = [route1(1:]
+
+    end
+end
+

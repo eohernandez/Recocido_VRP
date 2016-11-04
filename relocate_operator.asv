@@ -1,0 +1,15 @@
+function [ r1, r2 ] = relocate_operator( r1, r2 )
+%RELOCATE_OPERATOR Summary of this function goes here
+%   Detailed explanation goes here
+    r1_len = length(route1);
+    r2_len = length(route2);
+    if(r1_len > 2 && r2_len > 2)
+        num1 = randi([2,r1_len-1]);
+        num2 = randi([2,r2_len-1]);
+        
+        r1 = [r1(1:num1-1) num2 r1(num1+1:r1_len)];
+        
+    end
+
+end
+

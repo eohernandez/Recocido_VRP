@@ -1,0 +1,1 @@
+function res = f1(X)res = (X(2)+47)*sin(sqrt(abs(X(2)+X(1)/2+47)))-X(1)*sin(sqrt(abs(X(1)-(X(2)+47))));

@@ -23,33 +23,17 @@ function [ r1, r2 ] = exchange_oper_two( r1, r2 )
         r1  = r1(2:r1_len-1);
         r2  = r2(2:r2_len-1);
         
-        %prepare r1
         r1_len = length(r1);
         
         win_size1 = randi([1,r1_len-1]);
-        disp_max = (r1_len - win_size1);
+        disp_max = r1_len - win_size1;
         
         move1 = randi([1,disp_max]);
         
-        r1_p = r1(move1:move1 + win_size1);
-        r1_1 = r1(1:move1-1);
-        r1_2 = r1(move1 + win_size1+1:r1_len);
+        r1_p = r1(move1:win_size1);
         
-        %prepare r2
-        r2_len = length(r2);
-        
-        win_size2 = randi([1,r2_len-1]);
-        disp_max2 = (r2_len - win_size2);
-        
-        move2 = randi([1,disp_max2]);
-        
-        r2_p = r2(move2: move2+ win_size2);
-        r2_1 = r2(1:move2-1);
-        r2_2 = r2(move2 + win_size2+1:r2_len);
-        
-        r1 = [1 r1_1 r2_p r1_2 1];
-        r2 = [1 r2_1 r1_p r2_2 1];
 
+        
     end
 
 end

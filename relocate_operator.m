@@ -3,7 +3,8 @@ function [ r1, r2 ] = relocate_operator( r1, r2 )
 %   Detailed explanation goes here
     r1_len = length(r1);
     r2_len = length(r2);
-    if(r1_len > 2 && r2_len > 2)
+    
+   if(r1_len > 3 && r2_len > 3)
         num1 = randi([2,r1_len-1]);
         num2 = randi([2,r2_len-1]);
         

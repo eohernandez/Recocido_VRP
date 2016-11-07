@@ -89,36 +89,36 @@ else
         
         fprintf('split list r1 2\n');
         [r1, list] = split_list(r1);
-        route_len = length(ruta);
         for i = 1:length(list)
             if(length(list{i}) > 2)
-                ruta{route_len + 1} = list{i};
-                route_len = route_len + 1; % asignar nueva ruta
+                ruta{length(ruta) + 1} = list{i};
             end
         end
 
-    end
-    
-    if(length(r1) <= 2)
-        ruta(ran_num) = [];
-    else
-       ruta{ran_num} = r1; 
-    end
-    
+    end  
     
     if(sum(d(r2)) > capacidad)
         
          fprintf('split list r2 2\n');
 
         [r2, list] = split_list(r2);
-        route_len = length(ruta);
         for i = 1:length(list)
             if(length(list{i}) > 2)
-                ruta{route_len + 1} = list{i};
-                route_len = route_len + 1; % asignar nueva ruta
+                ruta{length(ruta) + 1} = list{i};
             end
         end
 
+    end
+    
+    
+     if(length(r1) <= 2)
+        ruta(ran_num) = [];
+        if(ran_num < ran_num2)
+            ran_num2 = ran_num2 - 1;
+        end
+        
+    else
+       ruta{ran_num} = r1; 
     end
         
     if(length(r2) <= 2)

@@ -31,7 +31,7 @@ while(length(ruta) > 34)
     ruta = vecino_VRP(ruta);
     %
     r2 = ruta;
-    while(costoVRP(ruta) < costoVRP(r2))
+    while(costoVRP(ruta) <= costoVRP(r2))
         r2 = vecino_VRP(r2);
         %fprintf('Better\n');
     end

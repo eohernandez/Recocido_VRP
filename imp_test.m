@@ -24,6 +24,7 @@ persistent file_name nc x y
     fprintf('Mejor encontrado:\n')
     mejor
     
+    
     if(length(varargin) == 0)
         ('Mejor encontrado:\n')
         grafica_VRP(mejor.x, file_name, nc, x, y);

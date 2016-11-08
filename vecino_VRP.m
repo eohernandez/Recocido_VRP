@@ -6,7 +6,7 @@ if(length(varargin)>1)
     fprintf('Guardar variables persistentes\n');
     d = varargin{1};
     capacidad = varargin{2};
-    split_list(d, capacidad);
+    %split_list(d, capacidad);
     return
 end
 
@@ -87,7 +87,7 @@ else
     
     if(sum(d(r1)) > capacidad)
         
-        fprintf('split list r1 2\n');
+        %fprintf('split list r1 2\n');
         [r1, list] = split_list(r1);
         for i = 1:length(list)
             if(length(list{i}) > 2)
@@ -99,7 +99,7 @@ else
     
     if(sum(d(r2)) > capacidad)
         
-         fprintf('split list r2 2\n');
+         %fprintf('split list r2 2\n');
 
         [r2, list] = split_list(r2);
         for i = 1:length(list)
